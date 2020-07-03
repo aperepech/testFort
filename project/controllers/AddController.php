@@ -8,7 +8,7 @@
 		public function show() //добавление данных в таблицу
 		{
             $this->title = 'Добавление комплектации';
-            
+            $message = '';
 
             if (isset($_POST['assembly']) and
             	isset($_POST['engine_size']) and
@@ -27,13 +27,25 @@
             	$gearbox = $_POST['gearbox'];
             	$price = $_POST['price'];
 
+                if ($price < 1000000) {
+                    $message = 'Стоимость автомобиля должна быть больше 1000000 рублей';
+                    $color = 'has-error';
+                }elseif($price >3000000){
+                    $message = 'Стоимость автомобиля должна быть меньше 3000000 рублей';
+                    $color = 'has-error';
+                }else{
+
             	(new Index)->setAll($assembly,$engine_size,$engine_power,$petrol,$drive,$gearbox,$price);
+                  $message = 'Комплектация успешно добавленна';
+                  $color = 'has-success';
+                  }
+                 
                }
             
-
+               
            
 
-			return $this->render('index/add');
+			return $this->render('index/add',['message'=>$message,'color'=>$color]);
 			
 		}
 

@@ -6,10 +6,10 @@
 							<form method="POST" role="form">
 							    <div class="form-group">
 							    	<?php 
-							    	if(isset($_POST['submit']))
-							    	print '<div class="form-group has-success">
-									<input class="form-control" placeholder="Комплектация успешно добавленна">
-								    </div>';?>
+							    	if(!empty($message))
+							    	print "<div class=\"form-group $color\">
+									<input class=\"form-control\" placeholder=\"$message\"\">
+								    </div>";?>
 									<label>комплектация</label>
 									<select  name = "assembly" class="form-control">
 										<option>Comfort</option>
@@ -44,7 +44,7 @@
 										<option>R/T</option>
 									</select><br>
 									<label>Цена</label>
-									<input name="price" required class="form-control" value=""><br>
+									<input name="price" type="number"required class="form-control" value=""><br>
 								    <input name = "submit" type="submit" class="btn btn-primary">
                          </div>
 					</div>
