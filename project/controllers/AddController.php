@@ -9,6 +9,12 @@
 		{
             $this->title = 'Добавление комплектации';
             $message = '';
+            $color = '';
+            $active = '';
+
+            if ($_SERVER['REQUEST_URI']=='/add/') {     // делаем выделение меню
+                   $active = 'active';
+               }
 
             if (isset($_POST['assembly']) and
             	isset($_POST['engine_size']) and
@@ -45,7 +51,7 @@
                
            
 
-			return $this->render('index/add',['message'=>$message,'color'=>$color]);
+			return $this->render('index/add',['message'=>$message,'color'=>$color,'active'=>$active]);
 			
 		}
 
