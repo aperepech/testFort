@@ -8,11 +8,11 @@
 		public function show($params) 
 		{
 
-			$this->title = 'Редактирование комплектации KIA CEED';
-            $id = $params['id'];
+			$this->title = 'Редактирование комплектации KIA CEED';  // устанавливаем title страницы
+            $id = $params['id'];             // получаем id для редакетирования
 			$list = (new Index) -> getById($id); 
 
-            if (isset($_POST['submit'])) {
+            if (isset($_POST['submit'])) {           //получаем данные из формы для редактирования
             	$assembly = $_POST['assembly'];
             	$engine_size = $_POST['engine_size'];
             	$engine_power = $_POST['engine_power'];
@@ -22,7 +22,7 @@
             	$price = $_POST['price'];
 
 
-            	(new Index)->upDateByIdd($id,$assembly,$engine_size,$engine_power,$petrol,$drive,$gearbox,$price);
+            	(new Index)->upDateByIdd($id,$assembly,$engine_size,$engine_power,$petrol,$drive,$gearbox,$price); //запись изменений в БД
                }
             return $this->render('index/change', [
 				'list' => $list,

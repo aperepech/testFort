@@ -8,11 +8,10 @@
 		public function show() 
 		{
 
-			$this->title = 'Комплектация KIA CEED';
+			$this->title = 'Комплектация KIA CEED'; //устанавливаем title страницы
 
-			$page = new Index;
+			$page = new Index; 
 			$allList = $page->getAll();
-			
 
 			return $this->render('index/index', [
 				'allList' => $allList,
@@ -21,19 +20,20 @@
 			
 		}
 
-		public function dell($params)
+		public function dell($params)   //удаление по id
 		{   
 			$this->title = 'Комплектация KIA CEED';
 			$id = $params['id'];
             
 			$page = new Index;
-            $page->dell($id);
+            $page->dell($id);          
             $allList = $page->getAll();
             
 
             return $this->render('index/index', [
 				'allList' => $allList,
-				'title' => $this->title]);
+				'title' => $this->title
+			]);
 			
 		}
 	}

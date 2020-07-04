@@ -20,8 +20,8 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="/"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Список автомобилей</a></li>
-			<li><a href="/add/"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Добавить комплектацию</a></li>
+			<li class="active"><a href="/index/"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Список автомобилей</a></li>
+			<li class=""><a href="/add/"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Добавить комплектацию</a></li>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -30,7 +30,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Icons</li>
+				<li class="active"></li>
 			</ol>
 		</div><!--/.row-->
 <div class="row">
@@ -38,8 +38,6 @@
 				<h1 class="page-header">Список комплектаций</h1>
 			</div>
 		</div><!--/.row-->
-				
-		
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">

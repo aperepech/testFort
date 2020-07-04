@@ -15,8 +15,9 @@
             if ($_SERVER['REQUEST_URI']=='/add/') {     // делаем выделение меню
                    $active = 'active';
                }
+              
 
-            if (isset($_POST['assembly']) and
+            if (isset($_POST['assembly']) and   // получаем данные из формы для добавления
             	isset($_POST['engine_size']) and
             	isset($_POST['engine_power']) and
             	isset($_POST['petrol']) and
@@ -33,7 +34,7 @@
             	$gearbox = $_POST['gearbox'];
             	$price = $_POST['price'];
 
-                if ($price < 1000000) {
+                if ($price < 1000000) {         //валидация стоимости
                     $message = 'Стоимость автомобиля должна быть больше 1000000 рублей';
                     $color = 'has-error';
                 }elseif($price >3000000){
@@ -41,17 +42,14 @@
                     $color = 'has-error';
                 }else{
 
-            	(new Index)->setAll($assembly,$engine_size,$engine_power,$petrol,$drive,$gearbox,$price);
+            	(new Index)->setAll($assembly,$engine_size,$engine_power,$petrol,$drive,$gearbox,$price); //запись строкт в БД
                   $message = 'Комплектация успешно добавленна';
                   $color = 'has-success';
                   }
                  
                }
             
-               
-           
-
-			return $this->render('index/add',['message'=>$message,'color'=>$color,'active'=>$active]);
+               return $this->render('index/add',['message'=>$message,'color'=>$color,'active'=>$active]);
 			
 		}
 

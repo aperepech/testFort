@@ -8,7 +8,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>KIA</span>CEED</a>
+				<a class="navbar-brand" href=""><span>KIA</span>CEED</a>
 			</div>
 							
 		</div><!-- /.container-fluid -->
@@ -20,7 +20,7 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class=""><a href="/"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Список автомобилей</a></li>
+			<li class=""><a href="/index/"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Список автомобилей</a></li>
 			<li class="<?=$active?>"><a href="/add/"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Добавить комплектацию</a></li>
 		</ul>
 
@@ -30,7 +30,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Icons</li>
+				<li class="active"></li>
 			</ol>
 		</div><!--/.row-->
 <div class="row">
@@ -79,7 +79,7 @@
 										<option>R/T</option>
 									</select><br>
 									<label>Цена</label>
-									<input name="price" type="number"required class="form-control" value=""><br>
+									<input name="price" type="number"required class="form-control" value="<?php if(isset($_POST['price'])) print $_POST['price']?>"><br>
 								    <input name = "submit" type="submit" class="btn btn-primary">
                          </div>
 					</div>
